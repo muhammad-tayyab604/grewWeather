@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>GrewWeather</title>
+  </head>
+  <body>
+    <nav class="backdrop-blur-sm bg-[#212121] py-4 ">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center">
+          <span id="test" class="text-[#e8e8e8] font-bold text-3xl ml-8 md:ml-32"
+            >WeatherApp</span
+          >
+        </div>
+        <div id="navLinks" class="flex items-center space-x-12 md:mr-32 text-2xl">
+          <a
+            href="#"
+            class="text-[#e8e8e8] font-bold drop-shadow-lg hover:text-red-50 hover:animate-pulse duration-300 hidden md:inline"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-[#e8e8e8] font-bold drop-shadow-lg hover:text-red-50 hover:animate-pulse duration-300 hidden md:inline"
+            >Forecast</a
+          >
+          <a
+            href="#"
+            class="text-[#e8e8e8] font-bold drop-shadow-lg hover:text-red-50 hover:animate-pulse duration-300 hidden md:inline"
+            >Cities</a
+          >
+          <a
+            href="#"
+            class="text-[#e8e8e8] font-bold drop-shadow-lg hover:text-red-50 hover:animate-pulse duration-300 hidden md:inline"
+            >About</a
+          >
+
+
+          <!-- Hamburger -->
+
+          <button id="hamburger"
+            class="text-[#e8e8e8] hover:text-[#e8e8e8] ml-4 md:hidden focus:outline-none"
+          >
+            <div  class="h-6 w-6 mr-8" aria-hidden="true">
+              <input id="checkbox" type="checkbox" />
+              <label class="toggle" for="checkbox">
+                <div class="bar bar--top"></div>
+                <div class="bar bar--middle"></div>
+                <div class="bar bar--bottom"></div>
+              </label>
+            </div>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Search Box -->
+
+    <div class="cards">
+      <div class="search">
+        <input class="" type="text" name="text" placeholder="Search City or Country">
+        <button type="text"><img src="images/search.png" ></button>
+      </div>
+      <div class="error">Inavlid City Name <span>⭕</span></div>
+      
+      <div class="masterWeather">
+        <p class="datetime translate-y-28 md:translate-y-32 md:text-lg w-32  font-extrabold"></p>
+        <div class="otherinfo">
+          <p class="abweather">Mostlycloudy</p>
+          <p class="minmaxtemp">33/25</p>
+          <p class="feelsLike">33/feelslike</p>
+        </div>
+        
+        <div class="weather">
+          <img id="clouds" src="images/clear.svg" class="weather-icon w-[180px] m-[15px] ml-[74px] md:ml-[160px]">
+          <h1 class="temp text-7xl font-extrabold">32°C</h1>
+          <h2 class="city text-4xl font-extrabold">Rawalpindi</h2>
+        </div>
+        
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" class="w-16 ml-2 md:w-10 md:ml-4" alt="">
+            <div>
+              <p class="humidity mt-2 text-xl">50%</p>
+              <p class="text-xl">humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" class="w-16 ml-5 md:w-10 md:ml-8" alt="">
+            <div>
+              <p class="wind mt-2 text-xl">12km/h</p>
+              <p class="text-xl">Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Varela+Round&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #e8e8e8;
+}
+
+body {
+  background-color: #212121;
+}
+
+/* Hamburger */
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  height: 20px;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: calc(4px / 2);
+  background: #fff;
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(0.5, -0.35, 0.35, 1.5) 0s;
+}
+
+/***** Tornado Animation *****/
+
+.bar--top {
+  bottom: calc(50% + 11px + 4px / 2);
+  transition-property: bottom, transform;
+  transition-delay: calc(0s + 0.35s) * 0.6;
+}
+
+.bar--middle {
+  top: calc(50% - 4px / 2);
+  transition-property: opacity, transform;
+  transition-delay: calc(0s + 0.35s * 0.3);
+}
+
+.bar--bottom {
+  top: calc(50% + 11px + 4px / 2);
+  transition-property: top, transform;
+  transition-delay: 0s;
+}
+
+#checkbox:checked + .toggle .bar--top {
+  transform: rotate(-135deg);
+  transition-delay: 0s;
+  bottom: calc(50% - 4px / 2);
+}
+
+#checkbox:checked + .toggle .bar--middle {
+  opacity: 0;
+  transform: rotate(-135deg);
+  transition-delay: calc(0s + 0.35s * 0.3);
+}
+
+#checkbox:checked + .toggle .bar--bottom {
+  top: calc(50% - 4px / 2);
+  transform: rotate(-225deg);
+  transition-delay: calc(0s + 0.35s * 0.6);
+}
+
+/* Card */
+
+.cards {
+  background: linear-gradient(
+    90deg,
+    rgba(114, 99, 175, 1) 0%,
+    rgba(88, 120, 194, 1) 45%,
+    rgba(59, 101, 152, 1) 100%
+  );
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  margin: 30px auto 0;
+  padding: 40px 35px;
+  border-radius: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.search button {
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background: #e8e8e8;
+  margin-right: 1rem;
+}
+
+.search button img {
+  width: 16px;
+  margin-left: 19px;
+}
+
+/* Search Box */
+.search input[type="text"] {
+  border: 0;
+  outline: 0;
+  padding: 10px 55px;
+  border-radius: 30px;
+  height: 60px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 14px;
+  color: 212121;
+  background: #e8e8e8;
+  color: #212121;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 767px) {
+  .search input[type="text"],
+  .search input[type="text"]:hover,
+  .search input[type="text"]:focus {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .search button {
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+  .search button img {
+    width: 16px;
+    margin-left: 20px;
+  }
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  margin-top: 55px;
+}
+
+.masterWeather {
+  display: none;
+}
+
+.error {
+  text-align: left;
+  margin-top: 12px;
+  color: red;
+  display: none;
+}
+
+.otherinfo {
+  margin-top: 60px;
+  text-align: right;
+}
+
+.otherinfo p {
+  color: #e8e8e8;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.datetime {
+  color: #e8e8e8;
+  text-align: left;
+}
