@@ -41,7 +41,7 @@ async function weatherInfo(city) {
     document.querySelector(".masterWeather").style.display = "none";
   } else {
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     // Adding Data
     document.querySelector(".temp").innerHTML =
       Math.round(data.main.temp) + "°C";
@@ -114,9 +114,11 @@ searchBtn.addEventListener("click", () => {
 
 // Hamburger togle
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerButton = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("hidden");
+  hamburgerButton.addEventListener("click", function () {
+    navLinks.classList.toggle("hidden");
+  });
 });
